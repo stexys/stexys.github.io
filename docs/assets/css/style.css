@@ -1,0 +1,1014 @@
+/**
+Glavni css fajl
+*/
+
+/*--------------------------------------------------------------
+# Opšte
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  text-decoration: none;
+  color: #5cb874;
+}
+
+a:hover {
+  color: #80c792;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Nazad na vrh dugme
+--------------------------------------------------------------*/
+.nazad-na-vrh {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #5cb874;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.nazad-na-vrh i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.nazad-na-vrh:hover {
+  background: #78c48c;
+  color: #fff;
+}
+
+.nazad-na-vrh.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Gornji top bar / gornja traka
+--------------------------------------------------------------*/
+#gornjaTraka {
+  background: #fbfbfb;
+  font-size: 15px;
+  height: 40px;
+  padding: 0;
+}
+
+#gornjaTraka .kontakt-informacije a {
+  line-height: 0;
+  color: #444444;
+  transition: 0.3s;
+}
+
+#gornjaTraka .kontakt-informacije a:hover {
+  color: #5cb874;
+}
+
+#gornjaTraka .kontakt-informacije i {
+  color: #5cb874;
+  line-height: 0;
+  margin-right: 5px;
+}
+
+#gornjaTraka .kontakt-informacije .telefon-ikonica {
+  margin-left: 15px;
+}
+
+#gornjaTraka .linkovi-drustvenih-mreza a {
+  color: #6f6f6f;
+  padding: 4px 12px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+
+#gornjaTraka .linkovi-drustvenih-mreza a:hover {
+  color: #5cb874;
+}
+
+/*--------------------------------------------------------------
+# Zaglavlje header
+--------------------------------------------------------------*/
+#zaglavlje {
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 997;
+  height: 70px;
+}
+
+#zaglavlje.zaglavlje-skrolovano {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#zaglavlje .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#zaglavlje .logo a {
+  color: #5cb874;
+}
+
+#zaglavlje .logo img {
+  max-height: 40px;
+}
+
+.skrolovano-offset {
+  margin-top: 70px;
+}
+
+/*--------------------------------------------------------------
+# Navigacioni meni
+--------------------------------------------------------------*/
+/**
+* Desktop navigacija
+*/
+.navigacioniBar {
+  padding: 0;
+}
+
+.navigacioniBar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navigacioniBar li {
+  position: relative;
+}
+
+.navigacioniBar a,
+.navigacioniBar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 15px;
+  color: #222222;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navigacioniBar a i,
+.navigacioniBar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navigacioniBar a:hover,
+.navigacioniBar .active,
+.navigacioniBar .active:focus,
+.navigacioniBar li:hover>a {
+  color: #5cb874;
+}
+
+.navigacioniBar .getpokrenuto,
+.navigacioniBar .getpokrenuto:focus {
+  color: #5cb874;
+  padding: 8px 25px;
+  margin-left: 30px;
+  border-radius: 4px;
+  border: 2px solid #5cb874;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.navigacioniBar .getpokrenuto:hover,
+.navigacioniBar .getpokrenuto:focus:hover {
+  background: #5cb874;
+  color: #fff;
+}
+
+.navigacioniBar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+}
+
+.navigacioniBar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navigacioniBar .dropdown ul a {
+  padding: 10px 20px;
+  text-transform: none;
+}
+
+.navigacioniBar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navigacioniBar .dropdown ul a:hover,
+.navigacioniBar .dropdown ul .active:hover,
+.navigacioniBar .dropdown ul li:hover>a {
+  color: #5cb874;
+}
+
+.navigacioniBar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navigacioniBar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navigacioniBar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navigacioniBar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navigacioniBar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobilna navigacija 
+*/
+.mobilni-nav-toggle {
+  color: #222222;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobilni-nav-toggle.bi-x {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .mobilni-nav-toggle {
+    display: block;
+  }
+
+  .navigacioniBar ul {
+    display: none;
+  }
+}
+
+.navigacioniBar-mobilni {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(9, 9, 9, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navigacioniBar-mobilni .mobilni-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navigacioniBar-mobilni ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navigacioniBar-mobilni a,
+.navigacioniBar-mobilni a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #222222;
+}
+
+.navigacioniBar-mobilni a:hover,
+.navigacioniBar-mobilni .active,
+.navigacioniBar-mobilni li:hover>a {
+  color: #5cb874;
+}
+
+.navigacioniBar-mobilni .getpokrenuto,
+.navigacioniBar-mobilni .getpokrenuto:focus {
+  margin: 15px;
+}
+
+.navigacioniBar-mobilni .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navigacioniBar-mobilni .dropdown ul li {
+  min-width: 200px;
+}
+
+.navigacioniBar-mobilni .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navigacioniBar-mobilni .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navigacioniBar-mobilni .dropdown ul a:hover,
+.navigacioniBar-mobilni .dropdown ul .active:hover,
+.navigacioniBar-mobilni .dropdown ul li:hover>a {
+  color: #5cb874;
+}
+
+.navigacioniBar-mobilni .dropdown>.dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# baner sekcija
+--------------------------------------------------------------*/
+#baner {
+  width: 100%;
+  height: 70vh;
+  background-color: rgba(9, 9, 9, 0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+#baner .vrteska,
+#baner .vrteska-inner,
+#baner .vrteska-item,
+#baner .vrteska-item::before {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#baner .vrteska-item::before {
+  content: "";
+  background-color: rgba(45, 103, 60, 0.8);
+}
+
+#baner .vrteska-kontejner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 50px;
+  right: 50px;
+}
+
+#baner .kontejner {
+  text-align: center;
+}
+
+#baner h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+#baner p {
+  animation-delay: 0.4s;
+  margin: 0 auto 30px auto;
+  color: #fff;
+}
+
+#baner .vrteska-inner .vrteska-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+
+#baner .vrteska-inner .vrteska-item,
+#baner .vrteska-inner .active.vrteska-item-start,
+#baner .vrteska-inner .active.vrteska-item-end {
+  opacity: 0;
+}
+
+#baner .vrteska-inner .active,
+#baner .vrteska-inner .vrteska-item-sledeci.vrteska-item-start,
+#baner .vrteska-inner .vrteska-item-prethodni.vrteska-item-end {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#baner .vrteska-kontrola-sledeci-icon,
+#baner .vrteska-kontrola-prethodni-icon {
+  background: none;
+  font-size: 30px;
+  line-height: 0;
+  width: auto;
+  height: auto;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.5);
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#baner .vrteska-kontrola-sledeci-icon:hover,
+#baner .vrteska-kontrola-prethodni-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#baner .vrteska-indikatori li {
+  list-style-type: none;
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+  border: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+#baner .vrteska-indikatori li.active {
+  opacity: 1;
+  background: #5cb874;
+}
+
+#baner .btn-get-pokrenuto {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 4px;
+  transition: 0.5s;
+  line-height: 1;
+  color: #fff;
+  animation-delay: 0.8s;
+  background: #5cb874;
+}
+
+#baner .btn-get-pokrenuto:hover {
+  background: #6ec083;
+}
+
+@media (max-width: 992px) {
+  #baner {
+    height: 100vh;
+  }
+
+  #baner .vrteska-kontejner {
+    top: 66px;
+  }
+}
+
+@media (max-width: 768px) {
+  #baner h2 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  #baner .vrteska-kontrola-prethodni,
+  #baner .vrteska-kontrola-sledeci {
+    width: 5%;
+  }
+}
+
+@media (max-height: 500px) {
+  #baner {
+    height: 120vh;
+  }
+}
+
+/*--------------------------------------------------------------
+# sekcija uopštena
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: #f8fcf9;
+}
+
+.sekcija-naslov {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.sekcija-naslov h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.sekcija-naslov h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.sekcija-naslov h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #5cb874;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.sekcija-naslov p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #919191;
+}
+
+/*--------------------------------------------------------------
+# Featured / ponudjeni servisi
+--------------------------------------------------------------*/
+.featured-servisi {
+  padding: 20px 0;
+}
+
+.featured-servisi .ikonica-kutija {
+  padding: 20px;
+}
+
+.featured-servisi .ikonica-kutija-bg {
+  background-image: linear-gradient(0deg, #222222 0%, #2f2f2f 50%, #222222 100%);
+}
+
+.featured-servisi .icon {
+  margin-bottom: 15px;
+}
+
+.featured-servisi .icon i {
+  color: #5cb874;
+  font-size: 42px;
+}
+
+.featured-servisi .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.featured-servisi .title a {
+  color: #222222;
+  transition: 0.3s;
+}
+
+.featured-servisi .ikonica-kutija:hover .title a {
+  color: #5cb874;
+}
+
+.featured-servisi .description {
+  line-height: 24px;
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# o nama
+--------------------------------------------------------------*/
+.oNama .content h3 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.oNama .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.oNama .content ul li {
+  padding-bottom: 10px;
+}
+
+.oNama .content ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #5cb874;
+}
+
+.oNama .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# servisi
+--------------------------------------------------------------*/
+.servisi .ikonica-kutija {
+  text-align: center;
+  padding: 70px 20px 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
+}
+
+.servisi .ikonica-kutija .icon {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+}
+
+.servisi .ikonica-kutija .icon i {
+  font-size: 36px;
+  transition: 0.5s;
+  position: relative;
+}
+
+.servisi .ikonica-kutija .icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.servisi .ikonica-kutija .icon svg path {
+  transition: 0.5s;
+  fill: #f5f5f5;
+}
+
+.servisi .ikonica-kutija h4 {
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+}
+
+.servisi .ikonica-kutija h4 a {
+  color: #222222;
+  transition: ease-in-out 0.3s;
+}
+
+.servisi .ikonica-kutija p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.servisi .ikonica-kutija:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+
+.servisi .ikonicaKutija-plava i {
+  color: #47aeff;
+}
+
+.servisi .ikonicaKutija-plava:hover .icon i {
+  color: #fff;
+}
+
+.servisi .ikonicaKutija-plava:hover .icon path {
+  fill: #47aeff;
+}
+
+.servisi .ikonicaKutija-narandzasta i {
+  color: #ffa76e;
+}
+
+.servisi .ikonicaKutija-narandzasta:hover .icon i {
+  color: #fff;
+}
+
+.servisi .ikonicaKutija-narandzasta:hover .icon path {
+  fill: #ffa76e;
+}
+
+.servisi .ikonicaKutija-roze i {
+  color: #e80368;
+}
+
+.servisi .ikonicaKutija-roze:hover .icon i {
+  color: #fff;
+}
+
+.servisi .ikonicaKutija-roze:hover .icon path {
+  fill: #e80368;
+}
+
+/*--------------------------------------------------------------
+# kontakt
+--------------------------------------------------------------*/
+.kontakt .info {
+  border-top: 3px solid #5cb874;
+  border-bottom: 3px solid #5cb874;
+  padding: 30px;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.kontakt .info i {
+  font-size: 20px;
+  color: #5cb874;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #eaf6ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.kontakt .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #222222;
+}
+
+.kontakt .info p {
+  padding: 0 0 10px 60px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.kontakt .info .linkovi-drustvenih-mreza {
+  padding-left: 60px;
+}
+
+.kontakt .info .linkovi-drustvenih-mreza a {
+  font-size: 18px;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+
+.kontakt .info .linkovi-drustvenih-mreza a:hover {
+  background: #5cb874;
+  color: #fff;
+}
+
+.kontakt .info .email:hover i,
+.kontakt .info .adresa:hover i,
+.kontakt .info .teleffon:hover i {
+  background: #5cb874;
+  color: #fff;
+}
+
+.kontakt .php-email-form {
+  width: 100%;
+  border-top: 3px solid #5cb874;
+  border-bottom: 3px solid #5cb874;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.kontakt .php-email-form .forma-grupa {
+  padding-bottom: 8px;
+}
+
+.kontakt .php-email-form .greska-poruka {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.kontakt .php-email-form .greska-poruka br+br {
+  margin-top: 25px;
+}
+
+.kontakt .php-email-form .poslata-poruka {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.kontakt .php-email-form .ucitavanje {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.kontakt .php-email-form .ucitavanje:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-ucitavanje 1s linear infinite;
+}
+
+.kontakt .php-email-form input,
+.kontakt .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.kontakt .php-email-form input:focus,
+.kontakt .php-email-form textarea:focus {
+  border-color: #5cb874;
+}
+
+.kontakt .php-email-form input {
+  height: 44px;
+}
+
+.kontakt .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.kontakt .php-email-form button[type=submit] {
+  background: #5cb874;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.kontakt .php-email-form button[type=submit]:hover {
+  background: #6ec083;
+}
+
+@keyframes animate-ucitavanje {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Futer
+--------------------------------------------------------------*/
+#futer {
+  background: #090909;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+#futer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+#futer p {
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+#futer .linkovi-drustvenih-mreza {
+  margin: 0 0 40px 0;
+}
+
+#futer .linkovi-drustvenih-mreza a {
+  font-size: 18px;
+  display: inline-block;
+  background: #5cb874;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#futer .linkovi-drustvenih-mreza a:hover {
+  background: #449d5b;
+  color: #fff;
+  text-decoration: none;
+}
+
+#futer .autorskaPrava {
+  margin: 0 0 5px 0;
+}
+
+#futer .zasluga {
+  font-size: 13px;
+}
+
+/*--------------------------------------------------------------
+# Slika u o nama sekciji
+--------------------------------------------------------------*/
+.slika
+{
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	}
+	
+.slika:hover
+{
+	color: #111;
+	background: greenyellow;
+	box-shadow: 0 0 100px greenyellow;
+	}
